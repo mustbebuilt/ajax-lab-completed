@@ -52,9 +52,14 @@
           staffList = JSON.parse(myXHR.responseText);
           console.dir(staffList);
           staffList.forEach(function(staffMember){
-            staffStr += `<tr><td>${staffMember.name}</td><tr>`  
+            staffStr += 
+            `<tr>
+            <td>${staffMember.name}</td>
+            <td>${staffMember.email}</td>
+            <td>${staffMember.age}</td>
+            <tr>`  
           })
-          tableBody.append(staffStr)
+          tableBody.innerHTML = staffStr
           // JSON.stringify does the opposite
           // Javascript object is turned into a string
           var myStr = JSON.stringify(myJson);
