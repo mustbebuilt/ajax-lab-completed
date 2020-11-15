@@ -54,7 +54,7 @@
           staffList.forEach(function(staffMember){
             staffStr += `<tr><td>${staffMember.name}</td><tr>`  
           })
-          tableBody.appendChild(staffStr)
+          tableBody.append(staffStr)
           // JSON.stringify does the opposite
           // Javascript object is turned into a string
           var myStr = JSON.stringify(myJson);
