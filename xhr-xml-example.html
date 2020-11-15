@@ -36,8 +36,10 @@
         if (myXHR.readyState == 4) {
           // console.dir(myXHR.responseXML);
           var buses = myXHR.responseXML.getElementsByTagName("bus");
-          console.dir(buses)
-          //foreach(myXHR.responseXML)
+          // console.dir(buses)
+          for(var bus of buses){
+            console.dir(bus)
+          }
         }
       }
     })();
