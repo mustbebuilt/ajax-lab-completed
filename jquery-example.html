@@ -49,9 +49,9 @@
           myData.forEach(function (staffMember) {
           staffStr +=
             `<tr>
-            <td>${myData.name}</td>
-            <td>${myData.email}</td>
-            <td>${myData.age}</td>
+            <td>${staffMember.name}</td>
+            <td>${staffMember.email}</td>
+            <td>${staffMember.age}</td>
             </tr>`
         })
         tableBody.innerHTML = staffStr
