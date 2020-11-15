@@ -51,11 +51,12 @@
           console.dir(myJson);
           document.getElementById("myData").innerHTML = myJson
             .map(obj => {
-               `<tr>
+               myStr = `<tr>
                   <td>${obj.name}</td>
                   <td>${obj.email}</td>
                   <td>${obj.age}</td>
                 </tr>`
+                return myStr
             }) 
         })
         .catch(() => console.log("damn that Jason"));
