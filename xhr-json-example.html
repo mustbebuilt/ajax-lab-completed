@@ -15,6 +15,21 @@
         XMLHttpRequest can be used to retrieve text files as well as XML. Most
         commonly these text files are in the JSON format.
       </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Age</th>
+          </tr>
+        </thead>
+        <tbody>
+
+
+        </tbody>
+
+
+      </table>
     </div>
   </body>
   <script>
@@ -26,13 +41,20 @@
       myXHR.open("GET", api, true);
       myXHR.addEventListener("readystatechange", showData);
       myXHR.send();
+      var staffList = [];
+      var staffStr = ""
+      var tableBody = document.querySelector("tbody");
       function showData() {
         if (myXHR.readyState == 4) {
           console.dir(myXHR.responseText);
           // data from server is a string make into an object
           // parse to make an object
-          var myJson = JSON.parse(myXHR.responseText);
-          console.dir(myJson);
+          staffList = JSON.parse(myXHR.responseText);
+          console.dir(staffList);
+          staffList.foreach(function(staffMember){
+            staffsStr =+ `<tr><td>${staffMember.name}</td><tr>`  
+          })
+          tableBody.appendChild(staffStr)
           // JSON.stringify does the opposite
           // Javascript object is turned into a string
           var myStr = JSON.stringify(myJson);
