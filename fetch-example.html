@@ -23,7 +23,21 @@
           >MDN</a
         >.
       </p>
-      <p id="dom"></p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Age</th>
+                </tr>
+              </thead>
+              <tbody id="myData">
+            
+            
+              </tbody>
+            
+            
+            </table>
     </div>
   </body>
   <script>
@@ -35,9 +49,13 @@
         .then(response => response.json())
         .then(myJson => {
           console.dir(myJson);
-          document.getElementById("dom").innerHTML = myJson
-            .map(obj => obj.age)
-            .join(" and ");
+          document.getElementById("myData").innerHTML = myJson
+            .map(obj => {
+               `<tr>
+                  <td>${obj.name}</td>
+                  <td>${obj.email}</td>
+                  <td>${obj.age}</td>
+                </tr>`
         })
         .catch(() => console.log("damn that Jason"));
     })();
