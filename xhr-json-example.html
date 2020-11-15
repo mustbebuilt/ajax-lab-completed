@@ -52,7 +52,7 @@
           staffList = JSON.parse(myXHR.responseText);
           console.dir(staffList);
           staffList.forEach(function(staffMember){
-            staffsStr =+ `<tr><td>${staffMember.name}</td><tr>`  
+            staffsStr += `<tr><td>${staffMember.name}</td><tr>`  
           })
           tableBody.appendChild(staffStr)
           // JSON.stringify does the opposite
