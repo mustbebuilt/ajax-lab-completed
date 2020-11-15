@@ -42,9 +42,9 @@
            var start = bus.getElementsByTagName("start");
            console.dir(start);
            adList += "<li>Start: "
-           adList += start.innerHTML
+           adList += start[0].innerHTML
            adList += "<li>Destination: "
-           adList += bus.getElementsByTagName("destination").innerHTML
+           adList += bus.getElementsByTagName("destination")[0].innerHTML
            adList += "</li>"
            // console.dir(bus.getElementsByTagName("destination").innerHTML)
            // console.dir(bus.getElementsByTagName("destination"))
