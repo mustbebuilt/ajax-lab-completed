@@ -38,8 +38,9 @@
           var buses = myXHR.responseXML.getElementsByTagName("bus");
           // console.dir(buses)
           for(var bus of buses){
-            console.dir(bus)
-            console.info(bus.getElementsByTagName("destination").nodeValue)
+           // console.dir(bus)
+            console.dir(bus.getElementsByTagName("destination"))
+           // console.dir(bus.getElementsByTagName("destination"))
           }
         }
       }
