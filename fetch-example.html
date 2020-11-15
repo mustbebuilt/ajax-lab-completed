@@ -44,20 +44,21 @@
     (function() {
       // IIFE
       let api = "data/myData.json";
+      let staffStr;
       // let api = "//www.ywonline.co.uk/web/newincid.nsf/incidentsjson";
       fetch(api)
         .then(response => response.json())
         .then(myJson => {
           console.dir(myJson);
-          document.getElementById("myData").innerHTML = myJson
-            .map(obj => {
+          staffStr += myJson.map(obj => {
                myStr = `<tr>
                   <td>${obj.name}</td>
                   <td>${obj.email}</td>
                   <td>${obj.age}</td>
                 </tr>`
                 return myStr
-            }) 
+            })
+            document.getElementById("myData").innerHTML = staffStr
         })
         .catch(() => console.log("damn that Jason"));
 
