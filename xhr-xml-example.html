@@ -39,8 +39,10 @@
           // console.dir(buses)
           for(var bus of buses){
            // console.dir(bus)
+           var start = bus.getElementsByTagName("start");
+           console.dir(start);
            adList += "<li>Start: "
-           adList += bus.getElementsByTagName("start").innerHTML
+           adList += start.innerHTML
            adList += "<li>Destination: "
            adList += bus.getElementsByTagName("destination").innerHTML
            adList += "</li>"
