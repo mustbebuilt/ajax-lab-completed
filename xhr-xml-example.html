@@ -39,9 +39,15 @@
           // console.dir(buses)
           for(var bus of buses){
            // console.dir(bus)
-            console.dir(bus.getElementsByTagName("destination"))
+           adList += "<li>Start: "
+           adList += bus.getElementsByTagName("start").innerHTML
+           adList += "<li>Destination: "
+           adList += bus.getElementsByTagName("destination").innerHTML
+           adList += "</li>"
+           // console.dir(bus.getElementsByTagName("destination").innerHTML)
            // console.dir(bus.getElementsByTagName("destination"))
           }
+          busList.appendChild(adList);
         }
       }
     })();
