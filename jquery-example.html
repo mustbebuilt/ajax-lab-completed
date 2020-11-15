@@ -41,18 +41,17 @@
   <script>
     (function() {
       var api = "data/myData.json";
-      var staffList = [];
       var staffStr = ""
       var tableBody = document.querySelector("tbody");
       //var api = "//www.ywonline.co.uk/web/newincid.nsf/incidentsjson";
       $.getJSON(api, function(myData) {
         console.dir(myData);
-                  staffList.forEach(function (staffMember) {
+          myData.forEach(function (staffMember) {
           staffStr +=
             `<tr>
-            <td>${staffMember.name}</td>
-            <td>${staffMember.email}</td>
-            <td>${staffMember.age}</td>
+            <td>${myData.name}</td>
+            <td>${myData.email}</td>
+            <td>${myData.age}</td>
             <tr>`
         })
         tableBody.innerHTML = staffStr

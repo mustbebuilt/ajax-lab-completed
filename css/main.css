@@ -18,8 +18,11 @@ table {
 table th,
 td {
   text-align: left;
-  padding: 3px 5px;
+  padding: 5px 8px;
 }
-table tr:nth-child(odd) {
+tr {
+  border-bottom: 1px solid #ccc;
+}
+tr:nth-child(odd) {
   background-color: #ccc;
 }
