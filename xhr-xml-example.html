@@ -18,20 +18,26 @@
         complicated than working with the simple structure afforded by JSON
         data.
       </p>
+      <ul class="busList">
+
+      </ul>
     </div>
   </body>
   <script>
     (function() {
       var api = "data/buses.xml";
-      // var api = "//www.ywonline.co.uk/web/newincid.nsf/incidentsjson";
-
       var myXHR = new XMLHttpRequest();
+      var busList = document.querySelector(".busList");
+      var adList = "";
       myXHR.open("GET", api, true);
       myXHR.addEventListener("readystatechange", showData);
       myXHR.send();
       function showData() {
         if (myXHR.readyState == 4) {
-          console.dir(myXHR.responseXML);
+          // console.dir(myXHR.responseXML);
+          var buses = myXHR.responseXML.getElementsByTagName("bus");
+          console.dir(buses)
+          //foreach(myXHR.responseXML)
         }
       }
     })();
