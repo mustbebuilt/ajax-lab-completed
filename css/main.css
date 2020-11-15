@@ -12,3 +12,14 @@ code {
 label {
   display: block;
 }
+table {
+  border-collapse: collapse;
+}
+table th,
+td {
+  text-align: left;
+  padding: 3px 5px;
+}
+table tr:nth-child(odd) {
+  background-color: #ccc;
+}
