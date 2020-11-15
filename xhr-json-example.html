@@ -51,7 +51,7 @@
           // parse to make an object
           staffList = JSON.parse(myXHR.responseText);
           console.dir(staffList);
-          staffList.foreach(function(staffMember){
+          staffList.forEach(function(staffMember){
             staffsStr =+ `<tr><td>${staffMember.name}</td><tr>`  
           })
           tableBody.appendChild(staffStr)
