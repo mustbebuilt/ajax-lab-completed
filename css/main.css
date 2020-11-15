@@ -24,6 +24,9 @@ td {
 tr {
   border-bottom: 1px solid #ccc;
 }
+thead tr {
+  background-color: #eee;
+}
 tr:nth-child(even) {
-  background-color: #ccc;
+  background-color: #eee;
 }
