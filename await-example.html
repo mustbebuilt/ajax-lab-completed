@@ -16,6 +16,21 @@
         <a href="https://caniuse.com/#search=await" target="_new">caniuse</a>.
       </p>
       <p>Is syntactical sugar allowing the removal of <code>then()</code>.</p>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Age</th>
+                      </tr>
+                    </thead>
+                    <tbody id="myData">
+                  
+                  
+                    </tbody>
+                  
+                  
+                  </table>
     </div>
   </body>
   <script>
@@ -29,6 +44,16 @@
       getData()
         .then(myJson => {
           console.dir(myJson);
+          //
+           document.getElementById("myData").innerHTML = myJson.map(obj => {
+            let myStr = `<tr>
+                  <td>${obj.name}</td>
+                  <td>${obj.email}</td>
+                  <td>${obj.age}</td>
+                </tr>`
+            return myStr
+          }).join("")
+          //
         })
         .catch(() => console.log("damn that Jason"));
     })();
