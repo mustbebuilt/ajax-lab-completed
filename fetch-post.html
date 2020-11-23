@@ -50,16 +50,7 @@
           console.dir(sendStr);
 
           //
-          fetch(api, {
-            method: "post",
-            body: sendStr,
-            headers: {
-              "Content-Type": "application/json",
-              "Access-Control-Allow-Origin": "*",
-              "Access-Control-Allow-Methods": "GET,HEAD,OPTIONS,POST,PUT",
-               "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-            }
-          })
+          fetch(api)
             .then(response => response.json())
             .then(respJson => {
               console.dir(respJson);
