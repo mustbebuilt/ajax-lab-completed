@@ -30,7 +30,8 @@ thead tr {
 tr:nth-child(even) {
   background-color: #eee;
 }
-input[type="text"] {
+input[type="text"],
+input[type="date"] {
   padding: 5px;
 }
 form > div {
