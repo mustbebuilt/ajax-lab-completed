@@ -30,3 +30,9 @@ thead tr {
 tr:nth-child(even) {
   background-color: #eee;
 }
+input[type="text"] {
+  padding: 5px;
+}
+form > div {
+  margin: 10px 0;
+}
