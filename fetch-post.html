@@ -24,6 +24,10 @@
           <label for="surname">Surname</label>
           <input type="text" name="surname" id="surname" />
         </div>
+                <div>
+                  <label for="dob">Date of Birth</label>
+                  <input type="date" name="dob" id="dob" />
+                </div>
         <div>
           <input type="submit" value="Send Data" />
         </div>
@@ -31,7 +35,7 @@
     </div>
     <script>
       (function() {
-        var api = "/api/postHandler";
+        var api = "http://www.mustbebuilt.co.uk/SHU/WAD/demo/xhr/posted-api.php";
         var myForm = document.getElementById("myForm");
         myForm.addEventListener("submit", ev => {
           ev.preventDefault();
