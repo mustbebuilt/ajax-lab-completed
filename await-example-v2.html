@@ -38,17 +38,19 @@
         const jsonData = await response.json();
         return jsonData;
       }
-      var jsonData = await getData(api);
-      document.getElementById("myData").innerHTML = jsonData
-        .map((obj) => {
-          let myStr = `<tr>
+      (async function displayData() {
+        let jsonData = await getData(api);
+        document.getElementById("myData").innerHTML = jsonData
+          .map((obj) => {
+            let myStr = `<tr>
                   <td>${obj.name}</td>
                   <td>${obj.email}</td>
                   <td>${obj.age}</td>
                 </tr>`;
-          return myStr;
-        })
-        .join("");
+            return myStr;
+          })
+          .join("");
+      })();
     })();
   </script>
 </html>
