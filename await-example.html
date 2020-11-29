@@ -39,7 +39,7 @@
       // let api = "//www.ywonline.co.uk/web/newincid.nsf/incidentsjson";
       
       async function getData(api) {
-      const fetchResult = fetch(URL)
+      const fetchResult = fetch(api)
       const response = await fetchResult;
       const jsonData = await response.json();
       document.getElementById("myData").innerHTML = jsonData.map(obj => {
