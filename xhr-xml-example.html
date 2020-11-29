@@ -18,13 +18,11 @@
         complicated than working with the simple structure afforded by JSON
         data.
       </p>
-      <ul class="busList">
-
-      </ul>
+      <ul class="busList"></ul>
     </div>
   </body>
   <script>
-    (function() {
+    (function () {
       var api = "data/buses.xml";
       var myXHR = new XMLHttpRequest();
       var busList = document.querySelector(".busList");
@@ -37,17 +35,17 @@
           // console.dir(myXHR.responseXML);
           var buses = myXHR.responseXML.getElementsByTagName("bus");
           // console.dir(buses)
-          for(var bus of buses){
-           // console.dir(bus)
-           var start = bus.getElementsByTagName("start");
-           console.dir(start);
-           adList += "<li>Start: "
-           adList += start[0].innerHTML
-           adList += " Destination: "
-           adList += bus.getElementsByTagName("destination")[0].innerHTML
-           adList += "</li>"
-           // console.dir(bus.getElementsByTagName("destination").innerHTML)
-           // console.dir(bus.getElementsByTagName("destination"))
+          for (var bus of buses) {
+            // console.dir(bus)
+            var start = bus.getElementsByTagName("start");
+            console.dir(start);
+            adList += "<li>Start: ";
+            adList += start[0].innerHTML;
+            adList += " Destination: ";
+            adList += bus.getElementsByTagName("destination")[0].innerHTML;
+            adList += "</li>";
+            // console.dir(bus.getElementsByTagName("destination").innerHTML)
+            // console.dir(bus.getElementsByTagName("destination"))
           }
           busList.innerHTML = adList;
         }

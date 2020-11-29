@@ -23,17 +23,12 @@
             <th>Age</th>
           </tr>
         </thead>
-        <tbody>
-
-
-        </tbody>
-
-
+        <tbody></tbody>
       </table>
     </div>
   </body>
   <script>
-    (function() {
+    (function () {
       var api = "data/myData.json";
       // var api = "//www.ywonline.co.uk/web/newincid.nsf/incidentsjson";
 
@@ -42,7 +37,7 @@
       myXHR.addEventListener("readystatechange", showData);
       myXHR.send();
       var staffList = [];
-      var staffStr = ""
+      var staffStr = "";
       var tableBody = document.querySelector("tbody");
       function showData() {
         if (myXHR.readyState == 4) {
@@ -51,15 +46,14 @@
           // parse to make an object
           staffList = JSON.parse(myXHR.responseText);
           console.dir(staffList);
-          staffList.forEach(function(staffMember){
-            staffStr += 
-            `<tr>
+          staffList.forEach(function (staffMember) {
+            staffStr += `<tr>
             <td>${staffMember.name}</td>
             <td>${staffMember.email}</td>
             <td>${staffMember.age}</td>
-            </tr>`  
-          })
-          tableBody.innerHTML = staffStr
+            </tr>`;
+          });
+          tableBody.innerHTML = staffStr;
           // JSON.stringify does the opposite
           // Javascript object is turned into a string
           var myStr = JSON.stringify(myJson);
