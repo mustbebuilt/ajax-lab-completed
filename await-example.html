@@ -42,7 +42,7 @@
       const fetchResult = fetch(URL)
       const response = await fetchResult;
       const jsonData = await response.json();
-      document.getElementById("myData").innerHTML = myJson.map(obj => {
+      document.getElementById("myData").innerHTML = jsonData.map(obj => {
             let myStr = `<tr>
                   <td>${obj.name}</td>
                   <td>${obj.email}</td>
