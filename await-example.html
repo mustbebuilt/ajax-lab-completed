@@ -37,16 +37,17 @@
     (function() {
       let api = "data/myData.json";
       // let api = "//www.ywonline.co.uk/web/newincid.nsf/incidentsjson";
-      async function getData() {
-        const response = await fetch(api);
-        const json = await response.json();
-        return json;
-      }
-      getData()
-        .then(myJson => {
-          console.dir(myJson);
-          //
-           document.getElementById("myData").innerHTML = myJson.map(obj => {
+      
+      async function getData(api) {
+      const fetchResult = fetch(URL)
+      const response = await fetchResult;
+      const jsonData = await response.json();
+      return jsonData;
+    }
+
+     let myJson = getData(api);
+      
+              document.getElementById("myData").innerHTML = myJson.map(obj => {
             let myStr = `<tr>
                   <td>${obj.name}</td>
                   <td>${obj.email}</td>
@@ -54,9 +55,7 @@
                 </tr>`
             return myStr
           }).join("")
-          //
-        })
-        .catch(() => console.log("damn that Jason"));
+
     })();
   </script>
 </html>
