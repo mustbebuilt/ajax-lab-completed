@@ -36,10 +36,10 @@
           <label for="surname">Surname</label>
           <input type="text" name="surname" id="surname" />
         </div>
-                <div>
-                  <label for="dob">Date of Birth</label>
-                  <input type="date" name="dob" id="dob" />
-                </div>
+        <div>
+          <label for="dob">Date of Birth</label>
+          <input type="date" name="dob" id="dob" />
+        </div>
         <div>
           <input type="submit" value="Send Data" />
         </div>
@@ -47,15 +47,15 @@
       <div>Age: <span class="age"></span></div>
     </div>
     <script>
-      (function() {
+      (function () {
         var api = "https://mustbebuilt.co.uk/SHU/WAD/demo/xhr/posted-api.php";
         var myForm = document.getElementById("myForm");
-        myForm.addEventListener("submit", ev => {
+        myForm.addEventListener("submit", (ev) => {
           ev.preventDefault();
           var formData = new FormData(myForm);
           var sendObject = {};
           console.dir(formData);
-          formData.forEach(function(value, key) {
+          formData.forEach(function (value, key) {
             sendObject[key] = value;
           });
           console.dir(sendObject);
@@ -67,12 +67,14 @@
             method: "post",
             body: sendStr,
             headers: {
-              "Content-Type": "application/json" }
-            }).then(response => response.json())
-            .then(myJson => {
+              "Content-Type": "application/json",
+            },
+          })
+            .then((response) => response.json())
+            .then((myJson) => {
               console.dir(myJson);
-              document.querySelector(".age").innerText = myJson.age
-              })
+              document.querySelector(".age").innerText = myJson.age;
+            });
         });
       })();
     </script>
