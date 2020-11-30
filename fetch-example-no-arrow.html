@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Fetch Example</title>
+    <title>Fetch Console Example</title>
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
@@ -23,8 +23,12 @@
 	  </ul>
 	  </nav>
       <p>
-        The Fetch API is a Modern wrapper for the classic XMLHttpRequest method.  It introduces the use of Promises as opposed to callbacks.  As such calls are chained with the <code>then()</code>.
+        The Fetch API is a Modern wrapper for the classic XMLHttpRequest method.
       </p>
+	  <p>This illustraitve example only outputs to the console as:</p>
+	  <div class="imgBox">
+		<img src="images/console-output-fetch.png" alt="Console Output">	
+	  </div>	
       <p>
         As a newer feature check browser support at
         <a href="https://caniuse.com/#search=fetch">caniuse</a>.
@@ -35,21 +39,6 @@
           >MDN</a
         >.
       </p>
-            <table>
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Email</th>
-                  <th>Age</th>
-                </tr>
-              </thead>
-              <tbody id="myData">
-            
-            
-              </tbody>
-            
-            
-            </table>
     </div>
   </body>
   <script>
@@ -58,20 +47,15 @@
       let api = "data/myData.json";
       // let api = "//www.ywonline.co.uk/web/newincid.nsf/incidentsjson";
       fetch(api)
-        .then(response => response.json())
-        .then(myJson => {
-          console.dir(myJson);
-          document.getElementById("myData").innerHTML = myJson.map(obj => {
-               let myStr = `<tr>
-                  <td>${obj.name}</td>
-                  <td>${obj.email}</td>
-                  <td>${obj.age}</td>
-                </tr>`
-                return myStr
-            }).join("")
-            // use join with template literals to remove extra comma
+        .then(function(response){
+		return response.json()  
+	  	})
+       .then(function(myJson){
+          console.dir(myJson)
         })
-        .catch(() => console.log("damn that Jason"));
+        .catch(function(){
+		  console.log("damn that Jason")
+	   })
 
     })()
   </script>

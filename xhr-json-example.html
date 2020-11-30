@@ -11,6 +11,18 @@
   <body>
     <div class="container">
       <h1>XHR with JSON Example</h1>
+	  <nav>
+	  <ul>
+	  	<li><a href="index.html">Home</a></li>
+		<li><a href="fetch-example-no-arrow.html">Quick Fetch Example</a></li>
+	  	<li><a href="xhr-xml-example.html">XHR/XML</a></li>
+	  	<li><a href="xhr-json-example.html">XHR/JSON</a></li>
+	  	<li><a href="jquery-example.html">jQuery</a></li>
+	  	<li><a href="fetch-example.html">Fetch</a></li>
+	  	<li><a href="await-example.html">Fetch with async/await</a></li>
+		<li><a href="fetch-post.html">Send data with Fetch</a></li>
+	  </ul>
+	  </nav>
       <p>
         XMLHttpRequest can be used to retrieve text files as well as XML. Most
         commonly these text files are in the JSON format.
@@ -62,7 +74,7 @@
           tableBody.innerHTML = staffStr
           // JSON.stringify does the opposite
           // Javascript object is turned into a string
-          var myStr = JSON.stringify(myJson);
+          var myStr = JSON.stringify(staffList);
           console.dir(myStr);
         }
       }

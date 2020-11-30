@@ -60,20 +60,23 @@
           });
           console.dir(sendObject);
           var sendStr = JSON.stringify(sendObject);
-          console.dir(sendStr);
+          sendData(sendStr);
 
-          //
-          fetch(api, {
+        });
+		  
+		async function sendData(sendStr){
+			const myFetch = fetch(api, {
             method: "post",
             body: sendStr,
             headers: {
-              "Content-Type": "application/json" }
-            }).then(response => response.json())
-            .then(myJson => {
-              console.dir(myJson);
-              document.querySelector(".age").innerText = myJson.age
-              })
-        });
+              "Content-Type": "application/json"
+               }
+			})
+			const myResp = await myFetch
+			const myJson = await myResp.json();					  
+  			document.querySelector(".age").innerText = myJson.age
+		}  
+		  
       })();
     </script>
   </body>
