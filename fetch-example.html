@@ -55,8 +55,8 @@
   <script>
     (function() {
       // IIFE
-      //let api = "data/myData.json";
-      let api = "//www.ywonline.co.uk/web/newincid.nsf/incidentsjson";
+      let api = "data/myData.json";
+      //let api = "//www.ywonline.co.uk/web/newincid.nsf/incidentsjson";
       fetch(api)
         .then(response => response.json())
         .then(myJson => {
